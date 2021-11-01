@@ -1,0 +1,41 @@
+{% extends "tableLayout.html" %}
+{%block body %}
+ <div class="row"><h3>information</h3></div>
+  <div class="row">
+    <div class="col-md-8">
+      <table id="example" class="table table-condensed table-hover table-dark table-striped table-bordered" style="width:50%">
+        <thead>
+           
+          <tr>
+            <td>ID</td>
+            <td>Cloud FIle Name</td>
+            <td>Date Created</td>
+            <td>User Uploaded</td>
+            <td>Date Last Audited</td>
+            <td>MHT Local</td>
+            <td>MHT Cloud</td>
+            <td>MHT Blockchain</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in data %}
+          <tr>
+            <td>{{row.0}}</td>
+            <td>{{row.1}}</td>
+            <td>{{row.2}}</td>
+            <td>{{row.3}}</td>
+            <td>{{row.4}}</td>
+            <td>{{row.5}}</td>
+            <td>{{row.6}}</td>
+            <td>{{row.7}}</td>
+            <td width="100%">
+              <a href="/Audit/{{row.0}}" class="btn btn-secondary btn-sm">Audit</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+ {% endblock %}

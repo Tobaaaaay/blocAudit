@@ -1,0 +1,134 @@
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css";
+
+/* body,
+html {
+    height: 100%
+}
+#particles-js canvas {
+    display: block;
+    vertical-align: bottom;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
+    transition: opacity .8s ease, transform 1.4s ease
+}
+ */
+#particles-js
+{
+    position: fixed;
+    /* height: 100%; */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+    background:rgb(29, 28, 28);
+    background-size:auto;
+}
+
+/* /*  */
+
+.content-wrap{
+
+    height: 10px;
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    z-index: 5;
+    margin-left: 15%;
+    -ms-transform: translateX(-10%);
+    transform:translateX(-10%)
+
+}
+
+.content-wrap2{
+
+    height: 10px;
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    z-index: 5;
+    margin-top: 22%;
+    margin-left: 15%;
+    -ms-transform: translateX(-10%);
+    transform:translateX(-10%)
+
+}
+
+
+button{
+    /*Change the width as much as you like, but make sure 
+    margin-left and margin-right + width = 100%*/
+    /* width: 60%; */
+    /* width: fit-content; */
+    border-radius:10px;
+    border-width: 4px;
+    font-weight: 500;
+    font-size: 20px;
+    width: 120px;
+    height: 35px;
+    background-color: transparent;
+    color:white;
+    border-color: white;
+	font-family: 'Open Sans', sans-serif; 
+    align-content: center;
+    /* margin-left:20%; */
+    /* margin-right:20%; */
+}
+button:hover{
+    background-color: rgba( 14, 1, 1, 0.50 ); */
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    
+    }
+
+.img-fluid {
+    max-width: auto;
+    height: relative;
+}
+.container{
+    margin-top:  10px !important;
+    background: transparent;
+    box-shadow: 0 8px 32px 0 rgba(131, 131, 141, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 400px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.text-box{
+    color: white;
+}
+
+.card{
+    top: 20px;
+    border:none;
+    outline: none;
+    background-color: rgb(167, 132, 132);
+    border-radius: 10px; 
+    
+background: rgba(3, 0, 0, 0.25);
+box-shadow: 0 8px 32px 0 rgba(33, 34, 34, 0.37);
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 400px );
+
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.h1{
+    font-size: 13px ;
+    color: white;
+    z-index: 5;
+
+    /* font:  */
+    
+}
+.p{
+    color: white;
+}

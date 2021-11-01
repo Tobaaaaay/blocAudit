@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Upload & Split File</title>
+  </head>
+  <body>
+    <div class="container">
+		<div class="row">
+			<div class ="mb-3 mt-3">
+				<h2 class="mb-3 mt-3" style="font-weight: 300">Upload & split File </h2>
+				<form action ="/uploadFile" method="POST" enctype="multipart/form-data">
+				<div class="form-group mb-3">
+					<div class="custom-file">
+					<input type="file" class="custom-file-input" name="file" id="file_input" oninput="input_filename();">
+					<label for="file_input" id="file_input_label" class="custom-file-label"> Select File</label>
+					</div>
+					<!-- <div class="dropdown dropright">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						  Select split number
+						</button>
+						<div class= "dropdown-menu" name = "chunkSize">
+						  <a class="dropdown-item" value="1" href="#">5</a>
+						  <a class="dropdown-item" value="10" href="#">10</a>
+						  <a class="dropdown-item" value="20" href="#">20</a>
+						  <a class="dropdown-item" value="30" href="#">30</a>
+						  <a class="dropdown-item" value="40" href="#">40</a>
+						  <a class="dropdown-item" value="50" href="#">50</a>
+						  <a class="dropdown-item" value="60" href="#">60</a>
+						  <a class="dropdown-item" value="70" href="#">70</a>
+						  <a class="dropdown-item" value="80" href="#">80</a>
+						  <a class="dropdown-item" value="90" href="#">90</a>
+						  <a class="dropdown-item" value ="100"href="#">100</a>
+						</div>
+					</div> -->
+
+					<label for="chunkSize">Choose a split size:</label>
+					<select name="chunkSize" id="chunkSize">
+    					<option value="10">10</option>
+    					<option value="20">20</option>
+						<option value="30">30</option>
+						<option value="40">40</option>
+						<option value="50">50</option>
+    					<option value="60">60</option>
+						<option value="70">70</option>
+						<option value="80">80</option>
+						<option value="80">90</option>
+						<option value="80">100</option>
+
+						
+					</select>
+
+				</div>	
+				<button type="submit" onclick="upload('{{ request.url}}')" id="upload_button" class="btn btn-primary">Upload</button>
+				<button class="btn btn-primary d-none" id="load_button" type="button" disabled>
+					<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+					Uploading.... 
+
+				</button>
+				<button class="btn btn-secondary d-none" id="cancel_button" type="button">Cancel Upload</button>
+			
+				<div id="progress_wrapper" class="d-none">
+				<label id="progress_status">50% uploaded</label>
+				<div class="progress" mb-3>
+				<div id="progress" class="progress-bar" role="progressbar" aria-valuenow="25" area-value-min="0" area-value-max="100"></div>
+				</div>
+				<div id="alert_wrapper"></div>
+				</div>
+				</form>
+
+			</div>	
+		</div>
+	</div>	
+
+	<script>
+		var progress = document.getElementById('progress');
+		var progress_wrapper = document.getElementById('progress_wrapper');
+		var progress_status = document.getElementById('progress_status')
+
+		var upload_button = document.getElementById("upload_button")
+		var loading_button = document.getElementById("load_button")
+		var cancel_button = document.getElementById("cancel_button")
+
+		var alert_wrapper = document.getElementById("alert_wrapper")
+		var input = document.getElementById("file_input")
+		var file_input_label = document.getElementById("alert_wrapper")
+
+
+		// function showAlert(message,alert){
+		// 	alert_wrapper.innerHTML='
+		// 	<div class="alert alert- alert-dismissible fade show" role="alert">
+  		// 	<span>$(message)</span>
+  		// 	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    	// 		<span aria-hidden="true">&times;</span>
+  		// 	</button>
+		// 	</div>
+		// 	';
+			
+		// };
+
+
+	</script>
+
+
+		  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
